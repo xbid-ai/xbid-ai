@@ -10,7 +10,13 @@ const path = require('path');
         cwd: srcRoot,
         dot: true,
         onlyFiles: true,
-        ignore: ['**/.git/**']
+        ignore: [
+            '**/.git/**',
+            '**/*.env',
+            '**/.env*',
+            '**/*.db*',
+            'tmp/**'
+        ]
     });
     for (const rel of entries) {
         const src = path.join(srcRoot, rel);
