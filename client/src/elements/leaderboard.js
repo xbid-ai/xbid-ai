@@ -47,7 +47,7 @@ export class Leaderboard extends LitElement {
                     <span class="mono">${Utils.truncateKey(item.address)}</span>
                   </div>
                   <div class="td amount" role="cell">
-                    <span class="chip">${Utils.formatNumber(item.balance)}</span>
+                    <span class="chip">${Utils.formatNumber(Number(item.amount || 0), true)}</span>
                   </div>
                 </button>
               `)}

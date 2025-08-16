@@ -122,13 +122,7 @@ export class DialogElement extends LitElement {
                     const body = document.querySelector('body-element');
                     element.items = body.events;
                 } else if (this.data.page === 'leaderboard') {
-                    element.items = [
-                        {
-                            // TODO.
-                            address: 'GAIL3QR4PFQBIGOA2WNTIXFM3N3G72F37UUV66YPKKCLMH3YETOSFHEF',
-                            balance: 1000
-                        }
-                    ];
+                    element.items = this.data.leaderboard.slice();
                 }
             } else {
                 body.textContent = `Page not found: ${this.data.page}`;

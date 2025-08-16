@@ -119,7 +119,7 @@ function register(app, auth, limiter) {
         try {
             res.json({
                 status: 'ok',
-                data: { ...pick(Daemon.results || {}, ['id', 'message', 'transactions', 'equity', 'wallet', 'events']) }
+                data: { ...pick(Daemon.results || {}, ['id', 'message', 'transactions', 'equity', 'wallet', 'events', 'extras']) }
             });
         } catch (err) {
             log.error('DAEMON', '/agent/feed', err);

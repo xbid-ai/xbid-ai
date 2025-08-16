@@ -81,6 +81,10 @@ export class Header extends LitElement {
         const dialog = document.querySelector('dialog-element');
         dialog.data = { title, page };
         dialog.visible = true;
+
+        if (page === Pages.leaderboard) {
+            dialog.data.leaderboard = (this.data?.extras?.leaderboard || []).slice();
+        }
     }
 
     _handleMenuClick() {
