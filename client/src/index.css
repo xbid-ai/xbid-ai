@@ -1,0 +1,79 @@
+:root {
+  --font: 'Inter';
+  --title-font: 'IBM Plex Sans';
+  --terminal-font: 'IBM Plex Mono', monospace;
+  --font-size: 14px;
+  --title-font-size: 19px;
+  --font-weight: 400;
+  --primary: #35c1f1;
+  --warning: #ffe08a;
+  --success: #43ffaf;
+  --error: #ff6464;
+  --primary-lite:#4dd4ff;
+  --dialog: #e8eefc;
+  --dimmed: #d0d0d0;
+
+  color: rgba(255, 255, 255, 1);
+  background-color: #14161a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: var(--font), sans-serif;
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight), 400;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center,
+      #242933 0%,
+      #15191F 40%,
+      #12161C 80%,
+      #101418 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--foreground-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  pointer-events: none;
+}
+
+canvas:focus {
+  outline: none;
+}

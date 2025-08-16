@@ -1,0 +1,24 @@
+{
+  "name": "xbid-ai",
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently --raw -n server,client -c green,cyan \"npm --workspace server run start\" \"npm --workspace client run dev\"",
+    "build:client": "npm run build --prefix client",
+    "build:server": "node build.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-html": "^8.1.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.2.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.1"
+  }
+}

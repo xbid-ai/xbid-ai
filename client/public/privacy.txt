@@ -1,0 +1,121 @@
+xbid.ai — Privacy Policy
+Last updated: Aug 15, 2025
+
+This Privacy Policy explains how XBID LABS LLC ('we', 'us', or 'our') collects, uses, and shares information about you when you use the xbid.ai website, API, mobile app, and any other products, services, or features we provide (collectively, the 'Service').
+
+We take privacy seriously. We collect only what we need to operate the Service, improve it, and comply with the law.
+
+1. Information we collect
+1.1 Information you provide directly
+
+Wallet addresses you connect to the Service
+
+Content you submit (e.g., reinforcement answers, feedback, or messages)
+
+Email address if you contact us directly
+
+1.2 Information collected automatically
+
+Basic usage data (pages visited, API calls, timestamps)
+
+Technical data (browser type, IP address, operating system)
+
+Blockchain data from public networks relevant to Service features (e.g., Stellar, Blend)
+
+1.3 No personal identity requirements
+We do not require your name, government ID, or other personal identifiers to use the Service.
+
+2. How we use information
+We use information to:
+
+Provide, maintain, and improve the Service
+
+Publish and display analytics, signals, and participation features
+
+Prevent abuse, fraud, and violations of our Terms of Use
+
+Comply with legal obligations
+
+We do not sell your personal data.
+
+3. On-chain transparency
+Much of the Service's functionality is based on public blockchain activity. Transactions you make on-chain are public, permanent, and outside of our control.
+
+4. Sharing of information
+We may share information:
+
+With service providers who help operate the Service (e.g., hosting, analytics)
+
+As required by law, regulation, or legal process
+
+To protect rights, property, or safety of us, our users, or others
+
+We do not share wallet private keys — we never have access to them.
+
+5. Cookies and analytics
+We may use cookies and similar technologies to remember preferences and analyze usage. You can disable cookies in your browser, but some features may not work.
+
+6. Third-party services
+The Service may link to or integrate with third-party services (e.g., wallets, SDKs, analytics). Their privacy practices are outside our control. Review their policies before use.
+
+7. Data retention
+We retain minimal data for as long as necessary to operate the Service and comply with our legal obligations. Blockchain data is retained indefinitely on-chain.
+
+8. Security
+We take reasonable measures to protect your information, but no method of transmission or storage is 100% secure.
+
+9. Your rights (GDPR, CCPA, and similar laws)
+Depending on your location, you may have certain rights under data protection laws, including:
+
+Access: You can request a copy of the personal data we hold about you.
+
+Correction: You can request correction of inaccurate or incomplete data.
+
+Deletion: You can request deletion of personal data we control.
+
+Restriction: You can request we limit processing of your personal data.
+
+Portability: You can request we provide your data in a machine-readable format.
+
+Objection: You can object to processing based on legitimate interests.
+
+Withdraw consent: Where processing is based on consent, you can withdraw it.
+
+To exercise these rights, contact us at hello@xbid.ai. We may need to verify your identity before fulfilling requests.
+
+10. International users
+Your information may be processed in the United States and other countries where we or our service providers operate. By using the Service, you consent to such transfers, which may have different data protection laws than your jurisdiction.
+
+If you are in the European Economic Area (EEA), the UK, or Switzerland, we rely on standard contractual clauses or other legal mechanisms for data transfers.
+
+11. Children's privacy
+The Service is not directed to anyone under the age of 18, and we do not knowingly collect personal data from children.
+
+12. Meta/Facebook App Compliance
+If you connect to the Service using Meta/Facebook login or interact with any of our Meta-integrated features:
+
+We will only receive the information you choose to share via the Meta/Facebook permission dialog (e.g., public profile, email address).
+
+We will use this information solely to operate and improve the Service.
+
+We will not sell or rent this information, and we will not share it with third parties except as required to operate the Service or comply with the law.
+
+You can revoke our access at any time through your Facebook account settings.
+
+13. Data Deletion Instructions (Facebook/Meta)
+If you have used Meta/Facebook login with our Service and wish to have your data deleted:
+
+In your Facebook account settings, go to Settings & Privacy > Settings > Apps and Websites.
+
+Find xbid.ai and click Remove.
+
+This will revoke our access to your information.
+
+You can also request complete deletion of any stored data related to your account by emailing hello@xbid.ai with the subject line Data Deletion Request. We will process your request within 30 days, except where retention is required by law.
+
+14. Changes to this policy
+We may update this Privacy Policy. If changes are material, we will provide reasonable notice (e.g., by posting on the site). Continued use after the effective date constitutes acceptance.
+
+15. Contact
+XBID LABS LLC
+Email: hello@xbid.ai

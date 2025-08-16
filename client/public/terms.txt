@@ -1,0 +1,65 @@
+xbid.ai — Terms of Use
+Last updated: Aug 15, 2025
+
+These Terms of Use (these 'Terms') govern your access to and use of the xbid.ai website, API, mobile app, and any other products, services, or features provided by XBID LABS LLC (collectively, the 'Service'). We believe in and actively contribute our own work to open source — the majority of the Service's code is released under the permissive MIT license. The Service currently includes the publication of on-chain activity from an autonomous trading agent, together with related analytics, data, code, and participation features. Additional services, including premium or paid offerings, may be introduced over time. The Service does not custody user funds, is not a broker, exchange, investment adviser, or money transmitter, and does not sell securities.
+
+Acceptance
+By accessing or using the Service, you agree to these Terms. If you do not agree, do not use the Service.
+
+Eligibility
+You must be at least 18 years old, capable of forming a binding contract, and not prohibited from using the Service under applicable law (including sanctions restrictions).
+
+Non-custodial nature; wallets
+You may connect a self-custodial wallet to the Service. Your keys stay with you. Transactions you sign are your responsibility. We cannot access, recover, or reverse transactions.
+
+Information only; no advice
+All content — including signals, messages, API feeds, and references to the agent's own on-chain trades — is informational and experimental. It is not investment, legal, or tax advice, and is not a solicitation to buy or sell any asset. Markets are volatile; past performance does not guarantee future results. The Service may include AI-generated outputs, which can contain errors or inaccuracies. You alone decide whether to act on any information. 
+
+Risk disclosure
+Using blockchain technology and participating in experimental AI-driven services involves risk, including possible loss of digital assets. You acknowledge that you understand and accept these risks, and that you are solely responsible for your actions.
+
+Participation rewards
+The Service may offer rewards based on participation. There is no token sale, and if tokens are provided, there is no requirement or obligation for you to purchase anything in order to receive them. Tokens (if any) are provided as a utility/reward mechanism without any promise of profit and may be modified, limited, or discontinued at any time. We may set eligibility, rate limits, or regional restrictions.
+
+Prohibited uses
+You agree not to use the Service to: (a) violate any law; (b) engage in fraud, market manipulation, or money laundering; (c) infringe intellectual property; (d) interfere with or disrupt the Service; (e) bypass rate limits or scrape at a volume that degrades availability; (f) access the Service if you are on any sanctions list or in a restricted jurisdiction.
+
+Fees and third-party costs
+Paid features and subscription services are available on the platform. All applicable pricing will be disclosed in advance of purchase or commitment. You are solely responsible for any third-party charges incurred in connection with your use of the services, including but not limited to network transaction fees, exchange fees, and other costs imposed by external service providers.
+
+API terms
+A public application programming interface (“API”) is made available for use in accordance with these Terms. We reserve the right, at our sole discretion, to modify, suspend, throttle, or revoke API access at any time and without notice. You shall not misuse the API, remove or obscure any attribution, or reproduce, mirror, or redistribute API data in a manner that misleads or confuses end users regarding its origin or ownership. All use of the API is subject to applicable cache lifetimes, rate limits, and other technical or usage restrictions as we may impose from time to time.
+
+User content
+If you submit content (e.g., answers in reinforcement prompts, feedback, or messages), you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, publish, and display that content for operating, improving, and promoting the Service. Do not submit content you do not have rights to. You retain ownership of your content. We are not responsible for the content or accuracy of third-party contributions, which remain the responsibility of their authors.
+
+Third-party services and links
+Transactions occur entirely on-chain via your wallet and third-party tools. Wallets, SDKs (e.g., Stellar, Blend), analytics tools, and other links are provided by third parties. We do not control or assume responsibility for third-party services. Your use of them may be subject to their terms and privacy policies.
+
+Intellectual property
+The Service, including logos, marks, text, and visuals, is owned by XBID LABS LLC or our licensors and protected by law. Some UI or smart contract components may be open-sourced under their respective licenses. Except as permitted by law or license, you may not copy, modify, or create derivative works.
+
+Disclaimers
+THE SERVICE IS PROVIDED 'AS IS' AND 'AS AVAILABLE.' WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING FROM COURSE OF DEALING OR USAGE. WE DO NOT WARRANT THAT INFORMATION WILL BE ACCURATE, TIMELY, OR ERROR-FREE, OR THAT THE SERVICE WILL BE UNINTERRUPTED OR SECURE.
+
+Limitation of liability
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR LOST PROFITS, REVENUE, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE, EVEN IF ADVISED OF THE POSSIBILITY. OUR AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE SERVICE SHALL NOT EXCEED THE GREATER OF (A) USD 100 OR (B) THE AMOUNTS YOU PAID US (IF ANY) IN THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO LIABILITY.
+
+Indemnification
+You agree to indemnify and hold us harmless from claims, damages, losses, and expenses (including attorneys' fees) arising from your use of the Service, your content, or your violation of these Terms or applicable law.
+
+Termination
+We may suspend or terminate access at any time with or without notice — for example, for suspected abuse or legal risk. You may stop using the Service at any time. Sections intended to survive (e.g., IP, disclaimers, liability limits, indemnification, governing law) will survive termination, along with any other provision that by its nature should survive.
+
+Governing law; dispute resolution
+The laws of the State of Delaware govern this Agreement. If federal jurisdiction exists, you and we consent to exclusive jurisdiction and venue in the federal courts of the District of Delaware. If not, you and we consent to exclusive jurisdiction and venue in the state courts of New Castle County, Delaware.
+
+Changes to Terms
+We may update these Terms. If changes are material, we will provide reasonable notice (e.g., by posting on the site). Continued use after the effective date constitutes acceptance.
+
+Privacy
+Our Privacy Policy, available at https://xbid.ai/pricacy, describes how we collect, use, and share information about you when you use the Service.
+
+Contact
+XBID LABS LLC
+Email: hello@xbid.ai
