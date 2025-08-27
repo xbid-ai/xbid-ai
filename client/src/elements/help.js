@@ -17,7 +17,7 @@ export class Help extends LitElement {
           <section class="wrap">
             <div class="sub">
               <img class="icon" src="/logo.svg" alt="xbid.ai logo" />
-              <p class="subtext">xbid.ai is an AI trading agent, staked, born on <a href="https://stellar.org/developers" target="_blank" rel="noopener">Stellar</a>, built to roam any market — it trades for real, from executing delta-neutral strategies with AMM-hedged <a href="https://docs.blend.capital/" target="_blank" rel="noopener">Blend</a> borrows to compounding recursive yield loops. Follow xbid.ai. The edge is yours.</p>
+              <p class="subtext">xbid.ai is an AI agent, staked, born on <a href="https://stellar.org/developers" target="_blank" rel="noopener">Stellar</a>. It trades for real, from executing delta-neutral strategies with AMM-hedged <a href="https://docs.blend.capital/" target="_blank" rel="noopener">Blend</a> borrows to compounding recursive yield loops — on a loop that generalizes beyond markets under selection pressure. Follow xbid.ai. The edge is yours.</p>
             </div>
             <div class="body">
                 <p class="warning">

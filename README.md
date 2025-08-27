@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 [![Follow on X](https://img.shields.io/badge/Follow%20on%20X-%40xbid__ai-black?logo=x)](https://x.com/xbid_ai)
 
-> 🌱 **You found us early.** xbid.ai is under active development — sharpening its edge and scaling trades as strategies prove themselves in live conditions.
+> 🌱 **You found us early.** xbid.ai is under active development — sharpening its edge and scaling its stake as strategies prove themselves in live conditions.
 
 # xbid.ai
 
@@ -9,15 +9,17 @@
 
 Live at [**https://xbid.ai**](https://xbid.ai).
 
-**xbid.ai** is an AI trading agent, staked, onchain. It trades for real — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops.
+With real stake and a memory of outcomes, selection pressure shapes behavior. **xbid.ai** is an open experiment built on that premise.
 
-Follow [xbid.ai](https://xbid.ai). The edge is yours.
+**xbid.ai** trades for real — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops. Reinforcement routes receipts back into behavior, holding the agent to outcomes.
+
+Open the terminal at [https://xbid.ai](https://xbid.ai) and watch the loop in motion.
 
 ## Built to Evolve
 
-The **xbid.ai** platform grows by design with new strategies, execution paths, and personas as its horizon expands.
+Whether trading for carry, running art auctions, or gaming competitively, the same loop generalizes beyond trading. The **xbid.ai** platform grows by design with new strategies, execution paths, and personas as its horizon expands.
 
-If you are curious how a live onchain trader learns and adapts, we share that journey in the [xbid.ai blog](https://blog.xbid.ai) — from strategy design and reinforcement loops to the choices driving its growth.
+If you are curious how the agent learns and adapts, we share that journey in the [xbid.ai blog](https://blog.xbid.ai) — from strategy design and reinforcement loops to the choices driving its growth.
 
 ## Architecture
 
@@ -25,8 +27,8 @@ If you are curious how a live onchain trader learns and adapts, we share that jo
 
 The system is built on three core layers, each designed for modularity and extensibility:
 
-* **Data Layer** — Ingests, normalizes and distills onchain and external data through pluggable adapters. Built for extension, this layer draws on market flow metrics, sentiment analysis, exchange inflow/outflow patterns, and internal telemetry from the feedback adapter such as portfolio performance and HHI concentration (see [Live Data Sources](#live-data-sources)).
-* **Strategy & Decision Engine** — Agents implement a persona-driven, LLM-based inference system that transforms candidate trading signals into actions. Built on abstract interfaces for seamless strategy development. In production, xbid.ai applies mechanisms such as delta hedging via AMMs (see [`delta-neutral.js`](server/pipeline/agents/default/strategies/signals/delta-neutral.js)), collateral rebalancing, and recursive leverage loops tuned to opportunity cost.
+* **Data Layer** — Ingests, normalizes and distills onchain and external data through pluggable adapters. Built for extension, this layer draws on sources like market flow metrics, sentiment analysis, exchange inflow/outflow patterns, and internal telemetry from the feedback adapter such as portfolio performance and HHI concentration (see [Live Data Sources](#live-data-sources)).
+* **Strategy & Decision Engine** — Agents implement a persona-driven, LLM-based inference system that transforms candidate signals into actions. Built on abstract interfaces for seamless strategy development. In production, xbid.ai applies mechanisms such as delta hedging via AMMs (see [`delta-neutral.js`](server/pipeline/agents/default/strategies/signals/delta-neutral.js)), collateral rebalancing, and recursive leverage loops tuned to opportunity cost.
 * **Reinforcement Layer** — Captures structured user input to refine future decisions through gamified feedback loops. Participation in the `ai lab` is open, with every voice weighted, recorded, and verified onchain via smart contracts.
 
 > Note: The Data Layer powers the `ai signal` API on our live platform — trading signals enriched with statistical context such as time-weighted averages, logarithmic returns, and trend slopes.
@@ -96,7 +98,7 @@ The live [xbid.ai](https://xbid.ai) service is developed and maintained by its o
 
 ## Security Disclaimer
 
-xbid.ai is live-trading software. If you run your own instance, you are **solely responsible** for securing your environment, wallet, and API keys. Only deploy from trusted builds and consider using a dedicated wallet for live, development or testing. We do not operate, endorse, or monitor third-party deployments, and accept no liability for losses, bugs, or misconfigurations in such instances. Please read our [Terms of Use](https://xbid.ai/terms.txt).
+xbid.ai runs an autonomous agent. If you run your own instance, you are **solely responsible** for securing your environment, wallet, and API keys. Only deploy from trusted builds and consider using a dedicated wallet for live, development or testing. We do not operate, endorse, or monitor third-party deployments, and accept no liability for losses, bugs, or misconfigurations. Please read our [Terms of Use](https://xbid.ai/terms.txt).
 
 ---
 
