@@ -19,6 +19,7 @@ const config = {
             feedback: require('../pipeline/adapters/feedback'), // LLM feedback loop.
             blend: require('../pipeline/adapters/blend'), // Blend protocol.
             amm: require('../pipeline/adapters/amm'), // Stellar AMM pools.
+            reflector: require('../pipeline/adapters/reflector'), // Reflector oracles.
             sentiment: require('../pipeline/adapters/sentiment') // Market sentiment.
         }
     },
@@ -44,6 +45,25 @@ const config = {
                 assetA: { code: 'XLM' },
                 assetB: { code: 'USDC', issuer: 'GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN' },
                 sampleSize: 200
+            }
+        ],
+        reflector: [
+            {
+                oracle: 'CALI2BYU2JE6WVRUFYTS6MSBNEHGJ35P4AVCZYF3B6QOE3QKOB2PLE6M',
+                assets: [
+                    'CB23WRDQWGSP6YPMY4UV5C4OW5CBTXKYN3XEATG7KJEZCXMJBYEHOUOV'
+                ]
+            }, {
+                oracle: 'CAFJZQWSED6YAWZU3GWRTOCNPPCGBN32L7QV43XX5LZLFTK6JLN34DLN',
+                assets: [
+                    'BTC',
+                    'ETH'
+                ]
+            }, {
+                oracle: 'CBKGPWGKSKZF52CFHMTRR23TBWTPMRDIYZ4O2P5VS65BMHYH4DXMCJZC',
+                assets: [
+                    'BRL'
+                ]
             }
         ]
     }

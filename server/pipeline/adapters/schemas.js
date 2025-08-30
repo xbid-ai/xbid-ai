@@ -199,6 +199,15 @@ const SentimentSchema = v.strictObject({
     })
 });
 
+const ReflectorSchema = v.strictObject({
+    source: v.literal('reflector'),
+    oracleId: v.string(),
+    assetId: v.string(),
+    decimals: v.number(),
+    price: v.regex(v.string(), DIGITS),
+    timestamp: v.number()
+});
+
 function validate(schema, value) {
     return v.parse(schema, sanitize(value));
 }
@@ -208,6 +217,7 @@ module.exports = {
     AmmSchema,
     BlendSchema,
     SentimentSchema,
+    ReflectorSchema,
     validate,
     validator: v
 };
