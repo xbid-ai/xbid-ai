@@ -1,7 +1,7 @@
 {
   "name": "xbid.ai",
   "short_name": "xbid.ai",
-  "description": "xbid.ai is an AI agent, staked, onchain. Built to evolve, it trades for real—executing delta-neutral strategies with AMM-hedged borrows and rebalancing collateral—on a loop that generalizes beyond markets under selection pressure. Follow xbid.ai. The edge is yours.",
+  "description": "xbid.ai is a multi-LLM AI agent, staked, onchain. Built to evolve, it trades for real—executing delta-neutral strategies with AMM-hedged borrows and rebalancing collateral—on a loop that generalizes beyond markets under selection pressure. Follow xbid.ai. The edge is yours.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",

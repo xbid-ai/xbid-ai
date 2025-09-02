@@ -1,5 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 [![Follow on X](https://img.shields.io/badge/Follow%20on%20X-%40xbid__ai-black?logo=x)](https://x.com/xbid_ai)
+[![Multi-LLM](https://img.shields.io/badge/Multi--LLM-Powered-blueviolet)](https://blog.xbid.ai)
 
 > 🌱 **You found us early.** xbid.ai is under active development — sharpening its edge and scaling its stake as strategies prove themselves in live conditions.
 
@@ -11,7 +12,7 @@ Live at [**https://xbid.ai**](https://xbid.ai).
 
 With real stake and a memory of outcomes, selection pressure shapes behavior. **xbid.ai** is an open experiment built on that premise.
 
-**xbid.ai** trades for real — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops. Reinforcement routes receipts back into behavior, holding the agent to outcomes.
+**xbid.ai** is a **Multi-LLM AI agent** trading for real — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops. Reinforcement routes receipts back into behavior, holding the agent to outcomes.
 
 Open the terminal at [https://xbid.ai](https://xbid.ai) and watch the loop in motion.
 
@@ -28,14 +29,14 @@ If you are curious how the agent learns and adapts, we share that journey in the
 The system is built on three core layers, each designed for modularity and extensibility:
 
 * **Data Layer** — Ingests, normalizes and distills onchain and external data through pluggable adapters. Built for extension, this layer draws on sources like market flow metrics, sentiment analysis, exchange inflow/outflow patterns, and internal telemetry from the feedback adapter such as portfolio performance and HHI concentration (see [Live Data Sources](#live-data-sources)).
-* **Strategy & Decision Engine** — Agents implement a persona-driven, LLM-based inference system that transforms candidate signals into actions. Built on abstract interfaces for seamless strategy development. In production, xbid.ai applies mechanisms such as delta hedging via AMMs (see [`delta-neutral.js`](server/pipeline/agents/default/strategies/signals/delta-neutral.js)), collateral rebalancing, and recursive leverage loops tuned to opportunity cost.
+* **Strategy & Decision Engine** — Agents implement a persona-driven, multi-LLM inference system that transforms candidate signals into actions. Built on abstract interfaces for seamless strategy development. In production, xbid.ai applies mechanisms such as delta hedging via AMMs (see [`delta-neutral.js`](server/pipeline/agents/default/strategies/signals/delta-neutral.js)), collateral rebalancing, and recursive leverage loops tuned to opportunity cost.
 * **Reinforcement Layer** — Captures structured user input to refine future decisions through gamified feedback loops. Participation in the `ai lab` is open, with every voice weighted, recorded, and verified onchain via smart contracts.
 
 > Note: The Data Layer powers the `ai signal` API on our live platform — trading signals enriched with statistical context such as time-weighted averages, logarithmic returns, and trend slopes.
 
 ## LLM Support
 
-Multiple LLM backends can be combined to suit strategy needs, performance, privacy, and cost profiles. One model drafts the initial inference, others critique. Our live agent works this way.
+The multi-LLM backend combines providers to suit strategy needs, performance, privacy, and cost profiles. One model drafts the initial inference, others critique. Our live agent works this way.
 
 xbid.ai supports the following LLM providers, including **Ollama** for self-hosted models. New providers can be added by implementing them in `router.js`. Persona behaviors, build archetypes, instructions, and provider/model settings are customizable via the `Behavior` interface and `persona.yaml` in the `agent` folder.
 
