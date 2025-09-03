@@ -39,7 +39,6 @@ class Router {
                     };
                     const response = await openai.responses.create(input);
                     record({ provider, model, input, response });
-                    console.log(response.output_text?.trim());
                     return response.output_text?.trim();
                 } else {
                     const input = {
