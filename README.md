@@ -42,7 +42,7 @@ xbid.ai supports the following LLM providers, including **Ollama** for self-host
 
 | Provider      | Notes                                                               |
 | ------------- | ------------------------------------------------------------------- |
-| **OpenAI**    | GPT-4, GPT-4o, GPT-4.5, GPT-3.5... Requires `OPENAI_API_KEY`.       |
+| **OpenAI**    | GPT-5, GPT-4, GPT-4o, GPT-4.5, GPT-3.5... Requires `OPENAI_API_KEY`.       |
 | **Anthropic** | Claude 4 Sonnet, Claude 4 Opus... Requires `ANTHROPIC_API_KEY`.     |
 | **Ollama**    | Self-hosted models (LLaMA, Mistral, Gemma...). Configure host/port. |
 | **Custom**    | Implement additional providers in `server/pipeline/router.js`.      |
