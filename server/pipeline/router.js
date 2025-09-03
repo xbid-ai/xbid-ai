@@ -22,7 +22,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 class Router {
-    static async dispatch({ provider, model, messages, temperature, tokens }, overrides = {}) {
+    static async dispatch({ provider, model, messages, temperature, tokens }, overrides = {}, params = {}) {
         const inputTokens = estimateLLmTokens(messages);
         const maxInputTokens = Number(process.env.MAX_LLM_TOKEN_INPUT ?? 1e4);
         if (inputTokens > maxInputTokens) {
@@ -31,16 +31,28 @@ class Router {
 
         const routes = {
             openai: async() => {
-                const input = {
-                    model,
-                    messages,
-                    temperature,
-                    max_tokens: tokens,
-                    ...overrides
-                };
-                const response = await openai.chat.completions.create(input);
-                record({ provider, model, input, response });
-                return response.choices?.[0]?.message?.content?.trim();
+                if (params.mode === 'response') {
+                    const input = {
+                        model,
+                        input: messages,
+                        ...overrides
+                    };
+                    const response = await openai.responses.create(input);
+                    record({ provider, model, input, response });
+                    console.log(response.output_text?.trim());
+                    return response.output_text?.trim();
+                } else {
+                    const input = {
+                        model,
+                        messages,
+                        temperature,
+                        max_tokens: tokens,
+                        ...overrides
+                    };
+                    const response = await openai.chat.completions.create(input);
+                    record({ provider, model, input, response });
+                    return response.choices?.[0]?.message?.content?.trim();
+                }
             },
             anthropic: async() => {
                 const input = {

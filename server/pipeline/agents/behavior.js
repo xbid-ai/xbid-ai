@@ -27,8 +27,11 @@ class Behavior {
                 ${this.#persona.role(build)}.
                 ${this.#persona.guide(build)}
             `;
+            this[`${build}Provider`] = entry.provider;
+            this[`${build}Model`] = entry.model;
             this[`${build}Instructions`] = `${persona}\n${entry.instructions}`;
             this[`${build}Task`] = entry.task;
+            this[`${build}Call`] = entry.call;
         }
         Object.freeze(this);
     }
@@ -36,19 +39,20 @@ class Behavior {
     async invoke({ build, input, temperature, tokens }) {
         const sys = this[`${build}Instructions`];
         const task = this[`${build}Task`];
+        const call = this[`${build}Call`];
         if (!sys || !task) {
             throw new Error(`Unknown build '${build}'`);
         }
         return sanitizeOutput(await Router.dispatch({
-            provider: this.#persona.provider(build),
-            model: this.#persona.model(build),
+            provider: this[`${build}Provider`] || this.#persona.provider(build),
+            model: this[`${build}Model`] || this.#persona.model(build),
             messages: [
                 { role: 'system', content: sys },
                 { role: 'user', content: `${task} ${input}`.trim() }
             ],
             temperature,
             tokens
-        }));
+        }, call?.overrides || {}, call?.params || {}));
     }
 }
 
