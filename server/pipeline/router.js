@@ -15,7 +15,7 @@ const OpenAI = require('openai');
 const Anthropic = require('@anthropic-ai/sdk');
 const axios = require('axios');
 const { config } = require('../config');
-const { log, estimateLLmTokens } = require('../utils');
+const { log, TokenCounter } = require('../utils');
 const { prepare } = require('../utils/database');
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -23,7 +23,7 @@ const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 class Router {
     static async dispatch({ provider, model, messages, temperature, tokens }, overrides = {}, params = {}) {
-        const inputTokens = estimateLLmTokens(messages);
+        const inputTokens = await TokenCounter.count(messages);
         const maxInputTokens = Number(process.env.MAX_LLM_TOKEN_INPUT ?? 1e4);
         if (inputTokens > maxInputTokens) {
             throw new Error(`Invalid LLM prompt size: ${inputTokens}/${maxInputTokens}`);

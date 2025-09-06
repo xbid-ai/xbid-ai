@@ -7,13 +7,6 @@
 
 const crypto = require('crypto');
 
-function estimateLLmTokens(input) {
-    const text = typeof input === 'string'
-        ? input
-        : input?.map(m => m.content).join(' ') || '';
-    return Math.ceil(text.length / 4);
-}
-
 function pick(obj, keys) {
     return obj ? Object.fromEntries(keys.map(k => [k, obj[k]])) : obj;
 }
@@ -102,6 +95,7 @@ function safeJson(s) {
 module.exports = {
     ...require('./keys'),
     ...require('./log'),
+    ...require('./tokkit'),
     pick,
     toFloat,
     shortId,
@@ -112,7 +106,6 @@ module.exports = {
     requireOverride,
     strToBigInt,
     sanitizeOutput,
-    estimateLLmTokens,
     validPrice,
     safeJson
 };

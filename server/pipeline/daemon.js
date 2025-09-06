@@ -17,7 +17,7 @@ const { prepare } = require('../utils/database');
 const { Ingester } = require('./ingester');
 const { Distiller } = require('./distiller');
 const { Agent } = require('./agents');
-const { shortId, sleep, getClass, validPrice, safeJson, pick, log, keypair } = require('../utils');
+const { shortId, sleep, getClass, validPrice, safeJson, pick, log, keypair, TokenCounter } = require('../utils');
 const { calculatePnL } = require('./agents/tools/pnl');
 
 const agentName = process.env.AGENT_NAME || 'default';
@@ -31,6 +31,12 @@ class Daemon {
     static async run(agent) {
         this.#agent = agent;
         log.info('DAEMON', `Running - agent '${process.env.AGENT_NAME}'`);
+
+        try {
+            TokenCounter.initialize({ config, log });
+        } catch (err) {
+            log.warn('DAEMON', 'Token counter failed to initialize', err);
+        }
 
         while (true) {
             if (!Ingester.ready) {
