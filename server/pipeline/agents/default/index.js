@@ -5,8 +5,9 @@
  * Author: Fred Kyung-jin Rezeau (오경진 吳景振) <hello@kyungj.in>
  */
 
-/* `DefaultAgent` is a working example of an autonomous trading agent executing a
- * delta-neutral hedging strategy for blend borrow positions using SDEX AMMs.
+/* `DefaultAgent` is a working example of an autonomous trading agent executing
+ * spot trading and delta-neutral hedging strategies for blend borrow
+ * positions using SDEX AMMs.
  *
  * Provided as a reference for users to extend or replace with custom strategies,
  * signals, and execution logic. Opinionated toward delta-neutral execution with
@@ -15,12 +16,13 @@
 
 const { log, shortId, safeJson, keypair } = require('../../../utils');
 const { stellarHorizon, DEFAULT_FEE } = require('../../../utils/network');
-const { Agent, ammSupply, getBalances, ammWithdraw } = require('..');
+const { Agent, ammSupply, getBalances, ammWithdraw, sdexSwap } = require('..');
 const { DefaultBehavior } = require('./behavior');
 const { validate, validator } = require('../../adapters/schemas');
 const { SentimentSignal } = require('../default/strategies/signals/sentiment');
 const { FeedbackSignal } = require('../default/strategies/signals/feedback');
 const { DeltaHedgingStrategy } = require('./strategies/delta-hedging');
+const { SpotStrategy } = require('./strategies/spot');
 
 const InferenceSchema = validator.strictObject({
     message: validator.pipe(validator.string(), validator.maxLength(200)),
@@ -41,7 +43,8 @@ class DefaultAgent extends Agent {
         }
 
         const data = (await Promise.all([
-            DeltaHedgingStrategy.prepare(input)
+            DeltaHedgingStrategy.prepare(input),
+            SpotStrategy.prepare(input)
             // Add additional strategies here...
         ])).flat();
 
@@ -50,7 +53,8 @@ class DefaultAgent extends Agent {
 
     static async analyze(input) {
         const signals = (await Promise.all([
-            DeltaHedgingStrategy.apply(input, this.#env)
+            DeltaHedgingStrategy.apply(input, this.#env),
+            SpotStrategy.apply(input, this.#env)
         ])).flat().map((s, i) => ({ signalId: shortId(i.toString()), ...s }));
 
         if (signals.length) {
@@ -121,6 +125,26 @@ class DefaultAgent extends Agent {
                 } = signal;
                 log.exec('AGENT', `Delta-neutral withdrawing ${shares} ${codeA}/${codeB} shares from SDEX AMM ${poolId}`);
                 const res = await ammWithdraw({ code: codeA, issuer: issuerA }, { code: codeB, issuer: issuerB }, { signal, ...this.#env });
+                res?.hash && transactions.push(res.hash);
+                break;
+            }
+            case 'buy-asset': {
+                const { data: { amount, price, pair: { base, quote } } } = signal;
+                const executionAmount = Number(amount) * guardFactor;
+                log.exec('AGENT', `Buying ${base.code} for ${executionAmount.toFixed(7)} ${quote.code} @ ${price}`);
+                const res = await sdexSwap(
+                    { code: quote.code, issuer: quote.issuer },
+                    { code: base.code, issuer: base.issuer }, executionAmount, { signal, ...this.#env });
+                res?.hash && transactions.push(res.hash);
+                break;
+            }
+            case 'sell-asset': {
+                const { data: { amount, price, pair: { base, quote } } } = signal;
+                const executionAmount = Number(amount) * guardFactor;
+                log.exec('AGENT', `Selling ${executionAmount.toFixed(7)} ${base.code} for ${quote.code} @ ${price}`);
+                const res = await sdexSwap(
+                    { code: base.code, issuer: base.issuer },
+                    { code: quote.code, issuer: quote.issuer }, executionAmount, { signal, ...this.#env });
                 res?.hash && transactions.push(res.hash);
                 break;
             }

@@ -65,7 +65,21 @@ const config = {
                     'BRL'
                 ]
             }
-        ]
+        ],
+        spot: {
+            pairs: [{
+                base: { code: 'KALE', issuer: 'GBDVX4VELCDSQ54KQJYTNHXAHFLBCA77ZY2USQBM4CSHTTV7DME7KALE' },
+                quote: { code: 'XLM' },
+                slopeUp: +0.0005,
+                slopeDown: +0.0005,
+                hysteresis: 0.0002,
+                maxFreshness: 300,
+                buyRatio: 0.2,
+                minQuoteAmount: 1,
+                maxQuoteAmount: 5,
+                maxBaseAmount: 10000
+            }]
+        }
     }
 };
 
