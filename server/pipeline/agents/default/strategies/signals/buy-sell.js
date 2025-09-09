@@ -42,7 +42,7 @@ class BuySellSignal extends Signal {
             }
 
             const hysteresis = pair.hysteresis ?? 0;
-            let side = it.observables.price.slope >= ((pair.slopeUp ?? 0) + hysteresis)
+            const side = it.observables.price.slope >= ((pair.slopeUp ?? 0) + hysteresis)
                 ? TradeSide.Buy
                 : it.observables.price.slope <= -((pair.slopeDown ?? 0) + hysteresis)
                     ? TradeSide.Sell
