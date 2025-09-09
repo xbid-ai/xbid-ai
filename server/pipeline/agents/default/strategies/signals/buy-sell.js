@@ -42,20 +42,22 @@ class BuySellSignal extends Signal {
             }
 
             const hysteresis = pair.hysteresis ?? 0;
-            const side = it.observables.price.slope >= ((pair.slopeUp ?? 0) + hysteresis)
+            let side = it.observables.price.slope >= ((pair.slopeUp ?? 0) + hysteresis)
                 ? TradeSide.Buy
                 : it.observables.price.slope <= -((pair.slopeDown ?? 0) + hysteresis)
                     ? TradeSide.Sell
                     : TradeSide.None;
             const baseBalance = balanceOf(pair.base);
             const quoteBalance = balanceOf(pair.quote);
-            if (side === TradeSide.Buy && baseBalance > (pair.maxBaseAmount ?? 0)) {
+            if (side === TradeSide.Buy && baseBalance >= (pair.maxExposure ?? 0)) {
                 continue;
             }
 
             const amount = side === TradeSide.Buy
-                ? Math.max(pair.minQuoteAmount ?? 1e-7, Math.min(quoteBalance * (pair.buyRatio ?? 0), pair.maxQuoteAmount ?? 0))
-                : side === TradeSide.Sell ? baseBalance : 0;
+                ? Math.max(pair.minOrderQuote ?? 1e-7, Math.min(quoteBalance * (pair.buyRatio ?? 0), pair.maxOrderQuote ?? 0))
+                : side === TradeSide.Sell
+                    ? Math.min(baseBalance, pair.maxOrderBase ?? Number.POSITIVE_INFINITY, Math.max((pair.minOrderBase ?? 1e-7), baseBalance * (pair.sellRatio ?? 1)))
+                    : 0;
             if (!amount) {
                 continue;
             }

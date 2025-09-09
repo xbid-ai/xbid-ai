@@ -73,11 +73,14 @@ const config = {
                 slopeUp: +0.0005,
                 slopeDown: +0.0005,
                 hysteresis: 0.0002,
-                maxFreshness: 300,
-                buyRatio: 0.2,
-                minQuoteAmount: 1,
-                maxQuoteAmount: 5,
-                maxBaseAmount: 10000
+                maxFreshness: 3600,
+                buyRatio: 0.1,
+                sellRatio: 0.3,
+                minOrderQuote: 1,
+                maxOrderQuote: 5,
+                minOrderBase: 1000,
+                maxOrderBase: 100000,
+                maxExposure: 100000
             }]
         }
     }
