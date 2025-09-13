@@ -8,6 +8,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.57.0",
     "@blend-capital/blend-sdk": "^3.2.0",
+    "@modelcontextprotocol/sdk": "^1.18.0",
     "@stellar/stellar-sdk": "^14.1.1",
     "axios": "^1.11.0",
     "better-sqlite3": "^12.2.0",
@@ -16,7 +17,8 @@
     "express-rate-limit": "^7.5.1",
     "js-yaml": "^4.1.0",
     "openai": "^5.10.2",
-    "valibot": "^1.1.0"
+    "valibot": "^1.1.0",
+    "zod": "^4.1.8"
   },
   "devDependencies": {
     "dotenv": "^17.0.1",

@@ -48,8 +48,9 @@ process.on('unhandledRejection', (reason) => {
 (function bootstrap() {
     try {
         setup(path.join(__dirname, 'pipeline'));
+        setup(path.join(__dirname, 'mcp'));
     } catch (err) {
-        log.error('SERVER', 'Bootstrap failed. Exiting.');
+        log.error('SERVER', 'Bootstrap failed. Exiting.', err);
         process.exit(1);
     }
 

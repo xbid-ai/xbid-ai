@@ -77,6 +77,8 @@ Create a `.env` file in `/server` to configure the backend. Key variables:
 | `CORS_ORIGIN`       | Comma-separated list of allowed origins.                  | `http://localhost:5173` |
 | `AUTH_TOKEN`        | Optional opaque `Bearer` token for securing API requests.          | `secret123`           |
 | `AGENT_NAME`        | Custom agent name          | `myagent`           | 
+| `MCP_HTTP`        | Enable MCP server over http.          | `1`           |
+| `MCP_STDIO`        | Enable MCP server over stdio.          | `1`           |
 
 Additional pipeline parameters — such as ingester sources, distiller settings, custom strategy thresholds, and transaction parameters (e.g., slippage) — are configured in [`server/config/default.js`](server/config/default.js).  
 To customize, copy this file into `server/config`, edit it as needed, and set the `CONFIG` environment variable to its filename.
