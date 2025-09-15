@@ -21,7 +21,7 @@ const mcp = {
     tools: [{
         name: 'get_data',
         config: {
-            title: 'Get transformed data',
+            title: 'Fetch xbid.ai post-distillation data',
             description: 'Return xbid.ai post-distillation data filtered by source',
             inputSchema: {
                 source: z.union([
