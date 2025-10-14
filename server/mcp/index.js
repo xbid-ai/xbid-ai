@@ -10,7 +10,7 @@
  * transformed post-distillation data.
  */
 
-const { z } = require('mcp-zod');
+const { z } = require('zod');
 const axios = require('axios');
 
 const ServerType = Object.freeze({ http: 'http', stdio: 'stdio' });
