@@ -16,7 +16,8 @@ const path = require('path');
             '**/.env*',
             '**/*.db*',
             'tmp/**',
-            'xbid-ai-tokkit/**'
+            'xbid-ai-tokkit/**',
+            '**/node_modules'
         ]
     });
     for (const rel of entries) {

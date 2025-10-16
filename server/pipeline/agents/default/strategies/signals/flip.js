@@ -50,9 +50,9 @@ class FlipSignal extends Signal {
             output.push({
                 kind: 'flip-asset',
                 reasons: [{
-                    heuristic: 'flip to take profit',
+                    heuristic: `flip '${it.asset.name || it.asset.code}' to take profit`,
                     details: {
-                        netProfit: bid - item.targetSpotPrice,
+                        netProfit: `${bid - item.targetSpotPrice} ${it.market.code}`,
                         ask,
                         bid,
                         askSlope,
