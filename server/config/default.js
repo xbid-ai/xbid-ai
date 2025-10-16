@@ -20,6 +20,7 @@ const config = {
             blend: require('../pipeline/adapters/blend'), // Blend protocol.
             amm: require('../pipeline/adapters/amm'), // Stellar AMM pools.
             reflector: require('../pipeline/adapters/reflector'), // Reflector oracles.
+            cyberbrawl: require('../pipeline/adapters/cyberbrawl'), // Cyberbrawl Auction House.
             sentiment: require('../pipeline/adapters/sentiment') // Market sentiment.
         }
     },
@@ -66,6 +67,12 @@ const config = {
                 ]
             }
         ],
+        cyberbrawl: {
+            items: [
+                { code: 'CARD00060', issuer: 'GBAKUWF2HTJ325PH6VATZQ3UNTK2AGTATR43U52WQCYJ25JNSCF5OFUN' }
+            ],
+            markets: ['USDC', 'XLM', 'CREDIT', 'KALE']
+        },
         spot: {
             pairs: [{
                 base: { code: 'KALE', issuer: 'GBDVX4VELCDSQ54KQJYTNHXAHFLBCA77ZY2USQBM4CSHTTV7DME7KALE' },
@@ -81,6 +88,12 @@ const config = {
                 minOrderBase: 1000,
                 maxOrderBase: 100000,
                 maxExposure: 100000
+            }],
+            items: [{
+                base: { code: 'CARD00060', issuer: 'GBAKUWF2HTJ325PH6VATZQ3UNTK2AGTATR43U52WQCYJ25JNSCF5OFUN' },
+                quote: { code: 'KALE', issuer: 'GBDVX4VELCDSQ54KQJYTNHXAHFLBCA77ZY2USQBM4CSHTTV7DME7KALE' },
+                targetSpotPrice: 4000,
+                spread: 0.1
             }]
         }
     }

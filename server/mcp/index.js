@@ -14,7 +14,7 @@ const { z } = require('zod');
 const axios = require('axios');
 
 const ServerType = Object.freeze({ http: 'http', stdio: 'stdio' });
-const Sources = Object.freeze(['blend', 'amm', 'reflector', 'sentiment']);
+const Sources = Object.freeze(['blend', 'amm', 'reflector', 'sentiment', 'cyberbrawl']);
 const RequestTimeout = 10000;
 
 const mcp = {

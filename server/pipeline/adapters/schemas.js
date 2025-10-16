@@ -208,6 +208,33 @@ const ReflectorSchema = v.strictObject({
     timestamp: v.number()
 });
 
+const CyberbrawlSchema = v.strictObject({
+    source: v.literal('cyberbrawl'),
+    asset: v.strictObject({
+        code: v.string(),
+        issuer: v.string(),
+        name: v.optional(v.string()),
+        id: v.optional(v.string())
+    }),
+    market: v.strictObject({
+        code: v.string(),
+        issuer: v.string()
+    }),
+    prices: v.strictObject({
+        bid: v.optional(
+            v.strictObject({
+                price: v.number()
+            })
+        ),
+        ask: v.optional(
+            v.strictObject({
+                price: v.number()
+            })
+        )
+    }),
+    updated: v.string()
+});
+
 function validate(schema, value) {
     return v.parse(schema, sanitize(value));
 }
@@ -218,6 +245,7 @@ module.exports = {
     BlendSchema,
     SentimentSchema,
     ReflectorSchema,
+    CyberbrawlSchema,
     validate,
     validator: v
 };

@@ -148,6 +148,15 @@ class DefaultAgent extends Agent {
                 res?.hash && transactions.push(res.hash);
                 break;
             }
+            case 'flip-asset': {
+                const { data: { item, market, price, amount } } = signal;
+                log.exec('AGENT', `Flipping ${item.code} for ${market.code} @ ${price}`);
+                const res = await sdexSwap(
+                    { code: item.code, issuer: item.issuer },
+                    { code: market.code, issuer: market.issuer }, amount, { signal, ...this.#env });
+                res?.hash && transactions.push(res.hash);
+                break;
+            }
             default:
                 log.warn('AGENT', `Unsupported signal: ${signal?.kind}`);
         }
