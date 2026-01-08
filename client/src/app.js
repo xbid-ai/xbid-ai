@@ -5,6 +5,7 @@
  * Author: Fred Kyung-jin Rezeau (오경진 吳景振) <hello@kyungj.in>
  */
 
+import './misc/polyfills.js';
 import { System } from './canvas/system';
 import { Utils } from './misc/utils';
 import { Canvas } from './canvas/canvas';

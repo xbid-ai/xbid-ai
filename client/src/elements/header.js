@@ -103,7 +103,7 @@ export class Header extends LitElement {
             background: transparent;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            z-index: 500;
+            z-index: 79;
         }
 
         .bar {
@@ -202,7 +202,7 @@ export class Header extends LitElement {
             right: 0;
             top: var(--header-height, 56px);
             bottom: 0;
-            z-index: 499;
+            z-index: 78;
         }
         .mobile-menu .backdrop {
             position: absolute;

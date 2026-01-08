@@ -48,7 +48,7 @@ export class DialogElement extends LitElement {
         return html`
             <div class="overlay" @click=${this._handleOverlayClick}>
                 <div class="blurred-background"></div>
-                    <div class="dialog">
+                    <div class="dialog ${this.data.page === 'lab' ? 'lab' : ''}">
                         <div class="title-bar">
                             <span class="title-text">${this.data.title || 'Page'}</span>
                             <button class="close-btn" @click=${this._close}>×</button>
@@ -122,7 +122,12 @@ export class DialogElement extends LitElement {
                     const body = document.querySelector('body-element');
                     element.items = body.events;
                 } else if (this.data.page === 'leaderboard') {
-                    element.items = this.data.leaderboard.slice();
+                    element.items = this.data.leaderboard
+                        .filter(i => ![
+                            'GDT4P43NLFZX42ARTFP7PMZTKVPQ73AHX64INVY63MXZ5NKQFB2TXBID',
+                            'GDN2M6AZCQ43ICCFTR6MGDZTXOLSCLKBLI3ZDS2YF7CWI6D7IHMAXBID',
+                            'GDVIYE5IVBVTZ2M3ED7T3MITSOBHGXD7H63KOU2Q2PXKH6Q3VPHYXBID',
+                            'GCF5ETHYIU3Q7MQS6QA4GZHLRPKTSSOYDUCWWHZ5NZ5DNWAC6ZNEXBID'].includes(i.address));
                 }
             } else {
                 body.textContent = `Page not found: ${this.data.page}`;
@@ -150,7 +155,7 @@ export class DialogElement extends LitElement {
                 opacity: 0;
                 visibility: hidden;
                 transition: opacity 0.2s, visibility 0.2s;
-                z-index: 1000;
+                z-index: 80;
             }
 
             .overlay.visible {
@@ -165,6 +170,7 @@ export class DialogElement extends LitElement {
                 width: 100%;
                 height: 100%;
                 backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(3px);
                 z-index: -1;
             }
 
@@ -181,6 +187,10 @@ export class DialogElement extends LitElement {
                 transition: transform 0.2s ease-in-out;
                 position: relative;
                 color: inherit;
+            }
+
+            .dialog.lab {
+                max-width: 800px;
             }
 
             .overlay.visible .dialog {

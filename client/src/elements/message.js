@@ -87,7 +87,7 @@ export class Message extends LitElement {
                 display: block;
                 font-family: inherit;
                 font-size: inherit;
-                z-index: 1000;
+                z-index: 80;
             }
 
             .overlay {

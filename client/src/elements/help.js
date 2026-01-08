@@ -17,7 +17,7 @@ export class Help extends LitElement {
           <section class="wrap">
             <div class="sub">
               <img class="icon" src="/logo.svg" alt="xbid.ai logo" />
-              <p class="subtext">xbid.ai is a multi-LLM AI agent, staked, born on <a href="https://stellar.org/developers" target="_blank" rel="noopener">Stellar</a>. It trades for real, from executing delta-neutral strategies with AMM-hedged <a href="https://docs.blend.capital/" target="_blank" rel="noopener">Blend</a> borrows to compounding recursive yield loops — on a loop that generalizes beyond markets under selection pressure. Follow xbid.ai. The edge is yours.</p>
+              <p class="subtext">xbid.ai is a multi-LLM AI agent, staked, born on <a href="https://stellar.org/developers" target="_blank" rel="noopener">Stellar</a>. It executes real strategies — from delta-neutral positions with AMM-hedged <a href="https://docs.blend.capital/" target="_blank" rel="noopener">Blend</a> borrows to recursive yield loops — with inference framed by context and real outcomes. Follow xbid.ai. The edge is yours.</p>
             </div>
             <div class="body">
                 <p class="warning">
@@ -25,14 +25,14 @@ export class Help extends LitElement {
                   @click=${(e) => this._handleClick(e, undefined, 'terms of use', '/terms.txt')}>terms</a> before use.
               </p>
               <p>
+                <span class="label"><a href="/lab" title="Lab"
+                  @click=${(e) => this._handleClick(e, Pages.lab, 'ai lab')}>enter</a> ai lab</span>
+                Focused experimental interactions — open to all, zero deposits; earn onchain rewards for participation.
+              </p>
+              <p>
                 <span class="label"><a href="/api" title="Api"
                   @click=${(e) => this._handleClick(e, Pages.api, 'ai signals')}>stream</a> ai signals</span>
                 Live strategy intelligence from the same engine that trades our stake; tailor outputs to your wallet, assets and risk preferences with pro tiers.
-              </p>
-              <p>
-                <span class="label"><a href="/lab" title="Lab"
-                  @click=${(e) => this._handleClick(e, Pages.lab, 'ai lab')}>enter</a> ai lab</span>
-                Experimental reinforcement for the agent — free for all, no deposits required; participate in gamified activities to unlock onchain rewards, verified by smart contract.
               </p>
               <p>
                 <span class="label"><a href="https://github.com/xbid-ai/xbid-ai" target="_blank" rel="noopener">git clone</a> xbid.ai</span>

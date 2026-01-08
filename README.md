@@ -2,43 +2,33 @@
 [![Follow on X](https://img.shields.io/badge/Follow%20on%20X-%40xbid__ai-black?logo=x)](https://x.com/xbid_ai)
 [![Multi-LLM](https://img.shields.io/badge/Multi--LLM-Powered-blueviolet)](https://blog.xbid.ai)
 
-> 🌱 **You found us early.** xbid.ai is under active development — sharpening its edge and scaling its stake as strategies prove themselves in live conditions.
-
 # xbid.ai
 
 ![XBID Terminal](media/xbid-terminal.png)
 
-Live at [**https://xbid.ai**](https://xbid.ai).
+Open the terminal at [https://xbid.ai](https://xbid.ai).
 
-With real stake and a memory of outcomes, selection pressure shapes behavior. **xbid.ai** is an open experiment built on that premise.
+**xbid.ai** is a multi-LLM AI agent built around a simple thesis: **Inference doesn't come from clever prompts.** It comes from contexts encoding *a posteriori* knowledge and implicit constraints — what we call **episteme**. Read the full methodology: [xbid.ai Lab: How We Build Better Inference](https://blog.xbid.ai/posts/xbid-ai-lab-build-better-inference/)
 
-**xbid.ai** is a **Multi-LLM AI agent** trading for real — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops. Reinforcement routes receipts back into behavior, holding the agent to outcomes.
+## Real Stake
 
-Open the terminal at [https://xbid.ai](https://xbid.ai) and watch the loop in motion.
+The agent is staked. Every decision has consequences.
 
-## Built to Evolve
-
-Whether trading for carry, running art auctions, or gaming competitively, the same loop generalizes beyond trading. The **xbid.ai** platform grows by design with new strategies, execution paths, and personas as its horizon expands.
-
-If you are curious how the agent learns and adapts, we share that journey in the [xbid.ai blog](https://blog.xbid.ai) — from strategy design and reinforcement loops to the choices driving its growth.
+**xbid.ai** currently operates live markets on Stellar — executing delta-neutral strategies with AMM-hedged borrows, rebalancing collateral, and compounding recursive yield loops. The same design generalizes beyond markets, spanning competitive gaming, metaverse, and other decision-heavy domains.
 
 ## Architecture
 
 ![XBID Agents](media/agents-structure.svg)
 
-The system is built on three core layers, each designed for modularity and extensibility:
+The system is built on three core layers:
 
-* **Data Layer** — Ingests, normalizes and distills onchain and external data through pluggable adapters. Built for extension, this layer draws on sources like market flow metrics, sentiment analysis, exchange inflow/outflow patterns, and internal telemetry from the feedback adapter such as portfolio performance and HHI concentration (see [Live Data Sources](#live-data-sources)).
-* **Strategy & Decision Engine** — Agents implement a persona-driven, multi-LLM inference system that transforms candidate signals into actions. Built on abstract interfaces for seamless strategy development. In production, xbid.ai applies mechanisms such as delta hedging via AMMs (see [`delta-neutral.js`](server/pipeline/agents/default/strategies/signals/delta-neutral.js)), collateral rebalancing, and recursive leverage loops tuned to opportunity cost.
-* **Reinforcement Layer** — Captures structured user input to refine future decisions through gamified feedback loops. Participation in the `ai lab` is open, with every voice weighted, recorded, and verified onchain via smart contracts.
-
-> Note: The Data Layer powers the `ai signal` API on our live platform — trading signals enriched with statistical context such as time-weighted averages, logarithmic returns, and trend slopes.
+* **Data Layer** — Ingests, normalizes and distills onchain and external data through pluggable adapters (see [Live Data Sources](#live-data-sources)).
+* **Model Layer** — Fronts OpenAI, Anthropic, or any self-hosted model via a multi-LLM router. Persona behavior are declared in YAML.
+* **Feedback Layer** — Operates on factual and epistemic feedback. This separation allows inference to remain grounded. Read more [here](https://blog.xbid.ai/posts/xbid-ai-intelligence-staked-onchain/#the-feedback-loop).
 
 ## LLM Support
 
-The multi-LLM backend combines providers to suit strategy needs, performance, privacy, and cost profiles. One model drafts the initial inference, others critique. Our live agent works this way.
-
-xbid.ai supports the following LLM providers, including **Ollama** for self-hosted models. New providers can be added by implementing them in `router.js`. Persona behaviors, build archetypes, instructions, and provider/model settings are customizable via the `Behavior` interface and `persona.yaml` in the `agent` folder.
+xbid.ai supports the following LLM providers, including **Ollama** for self-hosted models. New providers can be added by implementing them in `router.js`.
 
 | Provider      | Notes                                                               |
 | ------------- | ------------------------------------------------------------------- |
@@ -49,7 +39,7 @@ xbid.ai supports the following LLM providers, including **Ollama** for self-host
 
 > Audit trail: All LLM requests and responses (including provider, model, and context) are logged to SQLite `messages` table.
 
-### Live Data Sources
+## Live Data Sources
 
 [xbid.ai](https://xbid.ai) currently draws on these onchain and offchain sources to power its live trading decisions.
 
@@ -62,26 +52,6 @@ xbid.ai supports the following LLM providers, including **Ollama** for self-host
 |              | Santiment       | [santiment.net](https://santiment.net)                               |
 |              | CoinGecko       | [coingecko.com](https://www.coingecko.com)                           |
 |              | Binance API     | [developers.binance.com](https://developers.binance.com/)            |
-
-## Configuration
-
-Create a `.env` file in `/server` to configure the backend. Key variables:
-
-| Variable            | Description                                               | Example Value           |
-| ------------------- | --------------------------------------------------------- | ----------------------- |
-| `XBID_WALLET`       | Stellar secret key for the wallet used by the agent.              | `S...ECRET`                 |
-| `CONFIG`            | Config profile name (matches file in `server/config/`). | `default`               |
-| `OPENAI_API_KEY`    | API key for OpenAI models.                                | `sk-...`                |
-| `ANTHROPIC_API_KEY` | API key for Anthropic models.                             | `sk-ant-...`            |
-| `PORT`              | Backend server port.                                      | `3000`                  |
-| `CORS_ORIGIN`       | Comma-separated list of allowed origins.                  | `http://localhost:5173` |
-| `AUTH_TOKEN`        | Optional opaque `Bearer` token for securing API requests.          | `secret123`           |
-| `AGENT_NAME`        | Custom agent name          | `myagent`           | 
-| `MCP_HTTP`        | Enable MCP server over http.          | `1`           |
-| `MCP_STDIO`        | Enable MCP server over stdio.          | `1`           |
-
-Additional pipeline parameters — such as ingester sources, distiller settings, custom strategy thresholds, and transaction parameters (e.g., slippage) — are configured in [`server/config/default.js`](server/config/default.js).  
-To customize, copy this file into `server/config`, edit it as needed, and set the `CONFIG` environment variable to its filename.
 
 ## Getting Started
 
@@ -110,3 +80,4 @@ xbid.ai runs an autonomous agent. If you run your own instance, you are **solely
 - [Live Site](https://xbid.ai)
 - [Twitter](https://x.com/xbid_ai)
 - [Blog](https://blog.xbid.ai)
+- [Hugging Face](https://huggingface.co/xbid-labs)

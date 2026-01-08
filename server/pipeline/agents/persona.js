@@ -41,6 +41,10 @@ class Persona {
         return (this.doc?.[build]?.role || '').trim();
     }
 
+    episteme(build) {
+        return this.doc?.[build]?.episteme || {};
+    }
+
     guide(build) {
         const traits = this.doc?.[build]?.traits || [];
         const rules = this.doc?.[build]?.rules || [];

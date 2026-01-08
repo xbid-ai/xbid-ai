@@ -56,7 +56,7 @@ export class Footer extends LitElement {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            z-index: 500;
+            z-index: 79;
         }
 
         .bar {

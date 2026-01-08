@@ -16,6 +16,14 @@ function shortId(input, len = 12) {
         .update(input).digest('hex').slice(0, len);
 }
 
+// *Not* cryptographically secure.
+function randId() {
+    const p = () => {
+        return ('000' + ((Math.random() * 46656) | 0).toString(36)).slice(-3);
+    };
+    return p() + p();
+}
+
 function sanitizeOutput(str) {
     const match = str.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
     return match ? match[1].trim() : str.trim().replace(/^["']|["']$/g, '');
@@ -99,6 +107,7 @@ module.exports = {
     pick,
     toFloat,
     shortId,
+    randId,
     safeStringify,
     capitalize,
     getClass,

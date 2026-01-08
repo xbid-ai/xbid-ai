@@ -8,6 +8,7 @@
 import { html, LitElement, css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { animations } from './animations.js';
 import { Utils } from '../misc/utils';
 import { Pages } from '../misc/types';
 import './dialog';
@@ -105,8 +106,8 @@ export class BodyElement extends LitElement {
                             })}
                     </div>
                     <div class="terminal">
-                        <div class="terminal-line"><a href="/api" @click=${(e) => this._handleClick(e, Pages.api, 'ai signals')}>stream</a> <b>ai signals</b></div>
-                        <div class="terminal-line"><a href="/lab" @click=${(e) => this._handleClick(e, Pages.lab, 'ai lab')}>enter</a> <b>ai lab</b></div>
+                        <div class="terminal-line"><a href="/lab" @click=${(e) => this._handleClick(e, Pages.lab, 'xbid.ai lab')}>enter</a> <b>ai lab</b></div>
+                        <div class="terminal-line"><a href="/api" @click=${(e) => this._handleClick(e, Pages.api, 'xbid.ai signals')}>stream</a> <b>ai signals</b></div>
                         <div class="terminal-line"><a href="https://github.com/xbid-ai/xbid-ai" target="_blank" rel="noopener">git clone</a> xbid.ai</div>
                     </div>
                 </div>
@@ -126,7 +127,9 @@ export class BodyElement extends LitElement {
     }
 
     static get styles() {
-        return css`
+        return [
+            animations,
+            css`
             :host {
                 display: block;
                 width: 100%;
@@ -385,7 +388,6 @@ export class BodyElement extends LitElement {
 
             /* License: MIT - source: https://github.com/jh3y/whirl/blob/dist/css/flip-square.css */
             .flip-square:before {
-                -webkit-animation: flip-square 1.5s infinite;
                 animation: flip-square 1.5s infinite;
                 background-color: rgba(255, 255, 255, 0.9);
                 content: '';
@@ -395,7 +397,6 @@ export class BodyElement extends LitElement {
             }
 
             .line:before {
-                -webkit-animation: line .75s infinite alternate ease-in-out;
                 animation: line .75s infinite alternate ease-in-out;
                 background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9)));
                 background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
@@ -405,87 +406,6 @@ export class BodyElement extends LitElement {
                 display: block;
                 height: 20px;
                 width: 60px;
-            }
-
-            @-webkit-keyframes flip-square {
-                0% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(0deg) rotateY(0deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(0deg) rotateY(0deg);
-                }
-                50% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(0deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(0deg);
-                }
-                100% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(-180deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(-180deg);
-                }
-            }
-
-            @keyframes flip-square {
-                0% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(0deg) rotateY(0deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(0deg) rotateY(0deg);
-                }
-                50% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(0deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(0deg);
-                }
-                100% {
-                    -webkit-transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(-180deg);
-                    transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(-180deg);
-                }
-            }
-
-            @-webkit-keyframes line {
-                from {
-                    background-position: -60px 0;
-                }
-                to {
-                    background-position: 60px 0;
-                }
-            }
-
-            @keyframes line {
-                from {
-                    background-position: -60px 0;
-                }
-                to {
-                    background-position: 60px 0;
-                }
-            }
-
-            @keyframes blink {
-                0%, 50% {
-                    opacity: 1;
-                }
-                51%, 100% {
-                    opacity: 0;
-                }
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: scale(0.5, 0.5) translateY(40px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: scale(1, 1) translateY(0);
-                }
-            }
-
-            @keyframes fadeOut {
-                from {
-                    opacity: 0.7;
-                    transform: scale(0.7, 0.7) translateY(0);
-                }
-
-                to {
-                    opacity: 0;
-                    transform: scale(0.5, 0.5) translateY(60px);
-                }
             }
 
             @media (max-width: 599px) {
@@ -510,7 +430,7 @@ export class BodyElement extends LitElement {
                     gap: 4rem;
                 }
             }
-        `;
+        `];
     }
 }
 

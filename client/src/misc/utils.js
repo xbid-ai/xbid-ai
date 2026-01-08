@@ -8,6 +8,8 @@
 import { System } from '../canvas/system';
 import { Camera } from './camera';
 import { minidenticon } from 'minidenticons';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 export class Utils {
     static #cssVars = {};
@@ -15,6 +17,17 @@ export class Utils {
     static #hudCamera = new Camera();
     static #ratio = null;
     static #currentTime = performance.now();
+    static #notyf = new Notyf({
+        duration: 3000,
+        position: {
+            x: 'center',
+            y: 'top'
+        },
+        types: [{
+            type: 'info',
+            background: '#35c1f1'
+        }]
+    });
 
     static applyCameraRatio(ratio) {
         Utils.#ratio = ratio;
@@ -68,6 +81,25 @@ export class Utils {
         }
         return number?.toLocaleString('en-US',
             { minimumFractionDigits: digits, maximumFractionDigits: digits }) || '';
+    }
+
+    static formatBalance(amount, pre = 7, clean = true) {
+        const trim = s => s.replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '');
+        const num = Number(amount || 0);
+        const limits = [[1_000_000, 0], [100_000, 1], [10_000, 2], [1_000, 3], [100, 4], [10, 5]];
+        for (const [limit, n] of limits) {
+            if (num >= limit) {
+                pre = Math.min(pre, n);
+                break;
+            }
+        }
+        let [i, d] = clean ? trim(num.toFixed(pre)).split('.') : num.toFixed(pre).split('.');
+        i = Number(i).toLocaleString();
+        return d ? `${i}.${d}` : i;
+    }
+
+    static sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     static identicon(data) {
@@ -260,6 +292,23 @@ export class Utils {
         } else {
             canvas.style.pointerEvents = 'none';
         }
+    }
+
+    static showError(msg) {
+        Utils.#notyf.error(msg);
+    }
+
+    static showSuccess(msg) {
+        Utils.#notyf.success(msg);
+    }
+
+    static showCustom(msg, duration, dismissible, type) {
+        Utils.#notyf.open({
+            type: type || 'success',
+            message: msg,
+            duration,
+            dismissible
+        });
     }
 }
 

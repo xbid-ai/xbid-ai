@@ -43,13 +43,27 @@ class Behavior {
         if (!sys || !task) {
             throw new Error(`Unknown build '${build}'`);
         }
+
+        const messages = [];
+        messages.push({ role: 'system', content: sys });
+        const episteme = this.#persona.episteme(build);
+        if (episteme?.dialogue?.length) {
+            for (const turn of episteme.dialogue) {
+                if (!turn.role || !turn.content) {
+                    throw new Error(`Invalid episteme '${build}'`);
+                }
+                messages.push({
+                    role: turn.role,
+                    content: turn.content
+                });
+            }
+        }
+        messages.push({ role: 'user', content: `${task} ${input}`.trim() });
+
         return sanitizeOutput(await Router.dispatch({
             provider: this[`${build}Provider`] || this.#persona.provider(build),
             model: this[`${build}Model`] || this.#persona.model(build),
-            messages: [
-                { role: 'system', content: sys },
-                { role: 'user', content: `${task} ${input}`.trim() }
-            ],
+            messages,
             temperature,
             tokens
         }, call?.overrides || {}, call?.params || {}));

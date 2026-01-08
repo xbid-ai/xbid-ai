@@ -1,5 +1,5 @@
 xbid.ai — Terms of Use
-Last updated: Aug 15, 2025
+Last updated: Jan 08, 2026
 
 These Terms of Use (these 'Terms') govern your access to and use of the xbid.ai website, API, mobile app, and any other products, services, or features provided by XBID LABS LLC (collectively, the 'Service'). We believe in and actively contribute our own work to open source — the majority of the Service's code is released under the permissive MIT license. The Service currently includes the publication of on-chain activity from an autonomous trading agent, together with related analytics, data, code, and participation features. Additional services, including premium or paid offerings, may be introduced over time. The Service does not custody user funds, is not a broker, exchange, investment adviser, or money transmitter, and does not sell securities.
 
@@ -13,13 +13,16 @@ Non-custodial nature; wallets
 You may connect a self-custodial wallet to the Service. Your keys stay with you. Transactions you sign are your responsibility. We cannot access, recover, or reverse transactions.
 
 Information only; no advice
-All content — including signals, messages, API feeds, and references to the agent's own on-chain trades — is informational and experimental. It is not investment, legal, or tax advice, and is not a solicitation to buy or sell any asset. Markets are volatile; past performance does not guarantee future results. The Service may include AI-generated outputs, which can contain errors or inaccuracies. You alone decide whether to act on any information. 
+All content — including signals, messages, API feeds, and references to the agent's own on-chain trades — is informational and experimental. It is not investment, legal, or tax advice, and is not a solicitation to buy or sell any asset. Markets are volatile; past performance does not guarantee future results. The Service may include AI-generated outputs, which can contain errors or inaccuracies. You alone decide whether to act on any information. References to tokens, rewards, or on-chain activity are not intended to induce financial speculation or trading.
 
 Risk disclosure
 Using blockchain technology and participating in experimental AI-driven services involves risk, including possible loss of digital assets. You acknowledge that you understand and accept these risks, and that you are solely responsible for your actions.
 
+XBID Token
+The Service may include a digital token referred to as XBID (“XBID Token”). XBID is the native digital currency used within XBID LABS products and services. XBID Tokens are designed to function as a product currency within the Service and may be required or accepted as payment for certain features, services, or access levels. XBID Tokens are not offered or sold as an investment or financial product and do not represent equity, ownership, voting rights, dividends, revenue share, or any other interest in XBID LABS LLC or any affiliated entity. XBID Tokens may be transferable on public blockchain networks. XBID LABS LLC does not operate an exchange or brokerage service and makes no representations regarding the price, liquidity, or availability of any secondary market for XBID Tokens.
+
 Participation rewards
-The Service may offer rewards based on participation. There is no token sale, and if tokens are provided, there is no requirement or obligation for you to purchase anything in order to receive them. Tokens (if any) are provided as a utility/reward mechanism without any promise of profit and may be modified, limited, or discontinued at any time. We may set eligibility, rate limits, or regional restrictions.
+The Service may offer rewards based on participation, including through lab sessions, challenges, or other in-product activities. There is no token sale, and participation rewards (including any XBID Tokens) are provided solely in connection with use of the Service. There is no requirement or obligation to purchase anything in order to receive participation rewards. Participation rewards are provided as a utility or engagement mechanism only, without any promise of profit, and may be modified, limited, or discontinued at any time. We may set eligibility, rate limits, or regional restrictions.
 
 Prohibited uses
 You agree not to use the Service to: (a) violate any law; (b) engage in fraud, market manipulation, or money laundering; (c) infringe intellectual property; (d) interfere with or disrupt the Service; (e) bypass rate limits or scrape at a volume that degrades availability; (f) access the Service if you are on any sanctions list or in a restricted jurisdiction.
