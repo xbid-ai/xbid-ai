@@ -1,5 +1,5 @@
 xbid.ai — Terms of Use
-Last updated: Jan 08, 2026
+Last updated: Jan 09, 2026
 
 These Terms of Use (these 'Terms') govern your access to and use of the xbid.ai website, API, mobile app, and any other products, services, or features provided by XBID LABS LLC (collectively, the 'Service'). We believe in and actively contribute our own work to open source — the majority of the Service's code is released under the permissive MIT license. The Service currently includes the publication of on-chain activity from an autonomous trading agent, together with related analytics, data, code, and participation features. Additional services, including premium or paid offerings, may be introduced over time. The Service does not custody user funds, is not a broker, exchange, investment adviser, or money transmitter, and does not sell securities.
 
