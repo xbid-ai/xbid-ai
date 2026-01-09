@@ -22,7 +22,7 @@ XBID Token
 The Service may include a digital token referred to as XBID (“XBID Token”). XBID is the native digital currency used within XBID LABS products and services. XBID Tokens are designed to function as a product currency within the Service and may be required or accepted as payment for certain features, services, or access levels. XBID Tokens are not offered or sold as an investment or financial product and do not represent equity, ownership, voting rights, dividends, revenue share, or any other interest in XBID LABS LLC or any affiliated entity. XBID Tokens may be transferable on public blockchain networks. XBID LABS LLC does not operate an exchange or brokerage service and makes no representations regarding the price, liquidity, or availability of any secondary market for XBID Tokens.
 
 Participation rewards
-The Service may offer rewards based on participation, including through lab sessions, challenges, or other in-product activities. There is no token sale, and participation rewards (including any XBID Tokens) are provided solely in connection with use of the Service. There is no requirement or obligation to purchase anything in order to receive participation rewards. Participation rewards are provided as a utility or engagement mechanism only, without any promise of profit, and may be modified, limited, or discontinued at any time. We may set eligibility, rate limits, or regional restrictions.
+The Service may offer rewards based on participation, including through lab sessions, challenges, or other in-product activities. There is no token sale, and participation rewards (including any XBID Tokens) are provided solely in connection with use of the Service. Participation rewards are part of an experimental system, and scoring, eligibility, reward amounts, timing, or availability may change, pause, or end at any time without notice. Participation does not guarantee any reward, and some sessions or epochs may result in zero rewards. There is no requirement or obligation to purchase anything in order to receive participation rewards. Participation rewards are provided as a utility or engagement mechanism only, without any promise of profit, and may be modified, limited, or discontinued at any time. We may set eligibility, rate limits, or regional restrictions.
 
 Prohibited uses
 You agree not to use the Service to: (a) violate any law; (b) engage in fraud, market manipulation, or money laundering; (c) infringe intellectual property; (d) interfere with or disrupt the Service; (e) bypass rate limits or scrape at a volume that degrades availability; (f) access the Service if you are on any sanctions list or in a restricted jurisdiction.
@@ -61,7 +61,7 @@ Changes to Terms
 We may update these Terms. If changes are material, we will provide reasonable notice (e.g., by posting on the site). Continued use after the effective date constitutes acceptance.
 
 Privacy
-Our Privacy Policy, available at https://xbid.ai/pricacy, describes how we collect, use, and share information about you when you use the Service.
+Our Privacy Policy, available at https://xbid.ai/privacy, describes how we collect, use, and share information about you when you use the Service.
 
 Contact
 XBID LABS LLC
