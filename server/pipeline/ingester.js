@@ -85,11 +85,15 @@ class Ingester {
             }
 
             const json = safeStringify(data);
-            prepare(`
-                    INSERT INTO snapshots (id, timestamp, json)
-                    VALUES (${SCRATCHPAD_INDEX}, ?, ?)
-                    ON CONFLICT(id) DO UPDATE SET timestamp = excluded.timestamp, json = excluded.json;
-                `).run(now, json);
+            try {
+                prepare(`
+                        INSERT INTO snapshots (id, timestamp, json)
+                        VALUES (${SCRATCHPAD_INDEX}, ?, ?)
+                        ON CONFLICT(id) DO UPDATE SET timestamp = excluded.timestamp, json = excluded.json;
+                    `).run(now, json);
+            } catch (err) {
+                log.error('INGESTER', 'Failed to update', err);
+            }
             log.info('INGESTER', 'Scratchpad refreshed');
             if (archive) {
                 try {
